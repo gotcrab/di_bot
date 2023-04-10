@@ -8,5 +8,5 @@ storage: MemoryStorage = MemoryStorage()
 class FSMUserStates(StatesGroup):
     creating_group_name = State()
     creating_words = State()
-    looking = State()
+    choosing_group = State()
     training = State()
