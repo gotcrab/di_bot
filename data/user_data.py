@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+usr_dict: dict[int, [dict[str, dict[str, str]]]] = {}
+
 @dataclass
 class User:
     user_id: str
@@ -21,8 +23,8 @@ class UserDict:
     def __len__(self):
         return len(self.words)
 
-d: UserDict = UserDict('first', 'eng', 'rus', {'mail': 'pochta', 'gas': 'benzin', 'one': 'raz'})
+# d: UserDict = UserDict('first', 'eng', 'rus', {'mail': 'pochta', 'gas': 'benzin', 'one': 'raz'})
 
-if __name__ == '__main__':
-    d()
+# if __name__ == '__main__':
+    # d()
     # print(len(d))

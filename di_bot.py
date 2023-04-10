@@ -5,6 +5,7 @@ from aiogram import Bot, Dispatcher
 from config.project_config import Config, load_config
 from keyboards.main_menu import set_main_menu
 from handlers import user_handlers
+from states.states import storage
 
 
 logger = logging.getLogger(__name__)
@@ -20,9 +21,8 @@ async def main():
 
     config: Config = load_config()
 
-    bot: Bot = Bot(token=config.tg_bot.token,
-                   parse_mode='MarkdownV2')
-    dp: Dispatcher = Dispatcher()
+    bot: Bot = Bot(token=config.tg_bot.token)
+    dp: Dispatcher = Dispatcher(storage=storage)
 
     dp.include_router(user_handlers.router)
 
